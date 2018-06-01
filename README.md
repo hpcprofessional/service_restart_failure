@@ -10,6 +10,7 @@ This could leave the estate in a bad place, expecially if the failure to restart
 # To run this experiment:
 1. Classify a node that uses SystemV init scripts with this class (I used SLES11SP3 for no apparent reason)
 2. Do a puppet run. The service should start; note the PID (cat /var/run/my_service.pid)
+3. Set the class parameter '$fail\_to\_restart' to a value other than false using site.pp, Hiera, or the PE console
 4. The next puppet run, the service will fail to stop, causing Puppet to report a failure to bounce the service
 5. Subsequent puppet runs don't try to manage the service, but it is running under the old PID with the old config
 6. This is bad, because Puppet didn't guarantee the end state, nor did it report on it in an actionable way.
