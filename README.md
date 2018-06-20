@@ -1,3 +1,7 @@
+# Happy update
+
+The discussions were fruitful and Puppet changed they way service restarts are logged: https://tickets.puppetlabs.com/browse/PUP-8908
+
 # A thought experiment
 
 I was discussing something with a sysadmin and we determined there is an edge case where Puppet can, by failing to bounce a service (possibly through no fault of the service or Puppet), leave the system in an indeterminant state. 
